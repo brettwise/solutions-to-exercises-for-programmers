@@ -1,0 +1,2 @@
+defmodule TipCalc do
+end
