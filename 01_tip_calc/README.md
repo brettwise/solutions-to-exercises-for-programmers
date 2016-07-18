@@ -1,3 +1,5 @@
+TODO: Next take a value from an input pass that value to the url and then have the transformed value returned to the template.
+
 # TipCalc
 
 To start your Phoenix app:
