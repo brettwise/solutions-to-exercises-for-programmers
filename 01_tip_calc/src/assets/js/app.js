@@ -18,7 +18,8 @@ $(document).foundation();
     var billTotal = document.getElementById('bill-total').innerHTML;
 
     var tipAmount = tipPercentage/100 * billAmount;
-    billTotal = document.getElementById('bill-total').innerHTML = tipAmount + billAmount;
+    var billTotal = tipAmount + billAmount;
+    document.getElementById('bill-total').innerHTML = billTotal.toFixed(2);
   }
 
 })();
