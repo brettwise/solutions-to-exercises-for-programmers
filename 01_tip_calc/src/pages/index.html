@@ -14,7 +14,7 @@
         <div class="medium-4 columns">
           <label>Tip Percentage</label>
           <div class="input-group">
-            <input class="input-group-field" type="text" placeholder="18" />
+            <input id="tip-percentage" class="input-group-field" type="text" placeholder="18" />
             <span class="input-group-label">%</span>
           </div>
         </div>
@@ -27,19 +27,25 @@
           <label>Bill Amount</label>
           <div class="input-group">
             <span class="input-group-label">$</span>
-            <input class="input-group-field" type="text" placeholder="23.45" />
+            <input id="bill-amount" class="input-group-field" type="text" placeholder="23.45" />
           </div>
         </div>
 
       </div>
 
-      <div class="row">
 
+      <div class="row">
+        <div class="large-4 medium-4 columns">
+          <button id="calc-bill" type="button" class="expanded success button">Calculate</button>
+        </div>
+      </div>
+
+      <div class="row">
         <div class="large-4 medium-4 columns">
           <div class="row collapse">
             <label>Total (bill + tip)</label>
             <div class="input-group">
-              <h6>$25.56</h6>
+              <h6 id="bill-total">$0.00</h6>
             </div>
           </div>
         </div>
