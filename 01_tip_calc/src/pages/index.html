@@ -7,15 +7,18 @@
 <div class="row">
   <div class="large-12 columns">
 
-    <form>
+    <form data-abide>
 
       <div class="row">
 
         <div class="medium-4 columns">
           <label>Tip Percentage</label>
           <div class="input-group">
-            <input id="tip-percentage" class="input-group-field" type="text" placeholder="18" />
+            <input id="tip-percentage" class="input-group-field" type="text" placeholder="18" required pattern="number"/>
             <span class="input-group-label">%</span>
+            <span class="input-group-error">
+              <span class="input-group-cell"><span class="form-error">Numbers only!</span></span>
+            </span>
           </div>
         </div>
 
@@ -27,7 +30,11 @@
           <label>Bill Amount</label>
           <div class="input-group">
             <span class="input-group-label">$</span>
-            <input id="bill-amount" class="input-group-field" type="text" placeholder="23.45" />
+            <input id="bill-amount" class="input-group-field" type="text" placeholder="23.45" required pattern="number"/>
+            <span class="input-group-error">
+              <span class="input-group-cell"></span>
+              <span class="input-group-cell"><span class="form-error">Numbers only!</span></span>
+            </span>
           </div>
         </div>
 
