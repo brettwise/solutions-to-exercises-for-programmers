@@ -5,10 +5,11 @@ defmodule TipCalc do
       aliases: [ba: :bill_amount, tp: :tip_percentage] # makes '-q' an alias of '--question'
       )
 
-    tip_float = parse_number(tip_percentage) / 100
+    tip_float   = parse_number(tip_percentage) / 100
     bill_amount = parse_number(bill_amount)
-    tip_amount = calc_tip(tip_float, bill_amount)
-    bill_total = calc_total(tip_amount, bill_amount)
+    tip_amount  = calc_tip(tip_float, bill_amount)
+    bill_total  = calc_total(tip_amount, bill_amount)
+
     print_to_CLI(bill_amount, tip_percentage, tip_amount, bill_total)
   end
 
