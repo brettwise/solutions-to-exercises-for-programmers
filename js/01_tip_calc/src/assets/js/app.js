@@ -1,7 +1,7 @@
 $(document).foundation();
 
 (function () {
-  var calcBillButton = document.getElementById('calc-bill')
+  var calcBillButton = document.getElementById('calc-bill');
   calcBillButton.addEventListener('click', calcTotalWithTip, false);
 
   function calcTotalWithTip() {
