@@ -4,6 +4,7 @@ $(document).foundation();
   var calcBillButton = document.getElementById('calc-bill');
   calcBillButton.addEventListener('click', calcTotalWithTip, false);
 
+
   function calcTotalWithTip() {
 
     var tipPercentage = parseInt(
