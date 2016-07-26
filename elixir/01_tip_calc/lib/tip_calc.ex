@@ -5,12 +5,16 @@ defmodule TipCalc do
       aliases: [ba: :bill_amount, tp: :tip_percentage] # makes '-q' an alias of '--question'
       )
 
+
     tip_float   = parse_number(tip_percentage) / 100
     bill_amount = parse_number(bill_amount)
     tip_amount  = calc_tip(tip_float, bill_amount)
     bill_total  = calc_total(tip_amount, bill_amount)
 
-    print_to_CLI(bill_amount, tip_percentage, tip_amount, bill_total)
+    message = "So your bill is: $#{bill_amount} \nAnd you're tipping out at #{tip_percentage}% \nwhich is: $#{tip_amount} \nfor a total of: $#{bill_total}"
+
+    print_to_CLI(message)
+    make_txt_file(message)
   end
 
   @doc """
@@ -62,10 +66,23 @@ defmodule TipCalc do
   @doc """
   Prints 4 values to the command line: the bill amount, tip percentage, tip amount, and total bill amount.
   """
-  def print_to_CLI(bill_amount, tip_percentage, tip_amount, bill_total)  do
-    IO.puts "So your bill is: $#{bill_amount}"
-    IO.puts "And you're tipping out at #{tip_percentage}%"
-    IO.puts "which is: $#{tip_amount}"
-    IO.puts "for a total of: $#{bill_total}"
+  def print_to_CLI(message)  do
+    IO.puts message
+  end
+
+  def make_txt_file(message) do
+    path = "./calculations"
+    case File.dir?(path) do
+      false ->
+        File.mkdir(path)
+        make_txt_file(message)
+      _ ->
+        File.write("#{path}/tip-calc-#{get_current_date_time}.txt", message)
+    end
+  end
+
+  defp get_current_date_time do
+    DateTime.utc_now
+    |> DateTime.to_string
   end
 end
