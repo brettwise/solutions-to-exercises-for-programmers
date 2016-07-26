@@ -41,6 +41,7 @@ defmodule TipCalc do
       iex> TipCalc.calc_tip(0.15, 55.12)
       8.27
   """
+  @spec calc_tip(float, float) :: float
   def calc_tip(tip_percentage, bill_amount) do
     tip_percentage * bill_amount
     |> Float.round(2)
@@ -52,6 +53,7 @@ defmodule TipCalc do
       iex> TipCalc.calc_total(2.0, 4.32)
       6.32
   """
+  @spec calc_tip(float, float) :: float
   def calc_total(tip_amount, bill_amount) do
     tip_amount + bill_amount
     |> Float.round(2)
