@@ -1,0 +1,16 @@
+<div class="jumbotron">
+  <h2>Welcome to the solution list for "Excercises for Programmers!"</h2>
+</div>
+
+<div class="row marketing">
+
+  <div class="col-lg-6">
+    <h4>Solutions</h4>
+    <ul>
+      <li>
+        <a href="/calc-tip">01 Tip Calculator</a>
+      </li>
+    </ul>
+  </div>
+
+</div>
