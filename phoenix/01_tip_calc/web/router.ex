@@ -17,8 +17,8 @@ defmodule TipCalc.Router do
     pipe_through :browser # Use the default browser stack
 
     get "/tip-calc/:tip_percentage/:bill_amount", PageController, :calc_tip
-    get "/tip-calc/:tip_percentage", PageController, :calc
-    get "/tip-calc", PageController, :calc
+    get "/tip-calc/:tip_percentage", PageController, :calc_tip
+    get "/tip-calc", PageController, :calc_tip
     get "/", PageController, :index
   end
 
