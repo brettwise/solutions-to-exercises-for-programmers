@@ -40,5 +40,10 @@ function calcTotalWithTip() {
 
   var tipAmount = tipPercentage/100 * billAmount;
   var billTotal = tipAmount + billAmount;
+  document.getElementById('the-tip').innerHTML = round(tipAmount, 2);
   document.getElementById('bill-total').innerHTML = billTotal.toFixed(2);
+}
+
+function round(value, decimals) {
+  return Number(Math.round(value+'e'+decimals)+'e-'+decimals);
 }
