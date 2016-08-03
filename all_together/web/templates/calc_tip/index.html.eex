@@ -14,7 +14,7 @@
         <div class="medium-4 columns">
           <label>Bill Amount</label>
           <div class="input-group">
-            <span class="input-group-label">$</span>
+            <span class="input-group-label">Currency</span>
             <input id="bill-amount" class="input-group-field" type="text" placeholder="23.45" required pattern="number"/>
             <span class="input-group-error">
               <span class="input-group-cell"></span>
@@ -50,10 +50,10 @@
         <div class="large-4 medium-4 columns">
           <div class="text-right">
             <span>So tip amount is...</span>
-            <h3 id="the-tip">$0.00</h3>
+            <h3 id="the-tip">0.00</h3>
             <span>which brings the total to...</span>
             <hr>
-            <h1 id="bill-total">$0.00</h1>
+            <h1 id="bill-total">0.00</h1>
           </div>
         </div>
 
