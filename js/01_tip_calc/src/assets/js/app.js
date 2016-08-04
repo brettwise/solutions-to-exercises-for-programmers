@@ -1,26 +1,20 @@
-$(document).foundation();
+function calcTotalWithTip() {
 
-(function () {
-  var calcBillButton = document.getElementById('calc-bill');
-  calcBillButton.addEventListener('click', calcTotalWithTip, false);
+  var tipPercentage = parseInt(
+    document.getElementById('tip-percentage').value
+  );
 
+  var billAmount = parseFloat(
+    document.getElementById('bill-amount').value
+  );
 
-  function calcTotalWithTip() {
+  var billTotal = document.getElementById('bill-total').innerHTML;
 
-    var tipPercentage = parseInt(
-      document.getElementById('tip-percentage').value
-      , 10
-    );
+  var tipAmount = tipPercentage/100 * billAmount;
+  var billTotal = tipAmount + billAmount;
 
-    var billAmount = parseFloat(
-      document.getElementById('bill-amount').value
-    );
+  document.getElementById('bill-total').innerHTML = billTotal.toFixed(2);
+}
 
-    var billTotal = document.getElementById('bill-total').innerHTML;
-
-    var tipAmount = tipPercentage/100 * billAmount;
-    var billTotal = tipAmount + billAmount;
-    document.getElementById('bill-total').innerHTML = billTotal.toFixed(2);
-  }
-
-})();
+var calcBillButton = document.getElementById('calc-bill');
+calcBillButton.addEventListener('click', calcTotalWithTip, false);

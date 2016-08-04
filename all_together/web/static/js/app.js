@@ -1,6 +1,6 @@
 // Brunch automatically concatenates all files in your
 // watched paths. Those paths can be configured at
-// config.paths.watched in "brunch-config.js".
+// config.paths.watched in 'brunch-config.js'.
 //
 // However, those files will only be executed if
 // explicitly imported. The only exception are files
@@ -10,40 +10,57 @@
 // Import dependencies
 //
 // If you no longer want to use a dependency, remember
-// to also remove its path from "config.paths.watched".
-import "phoenix_html"
+// to also remove its path from 'config.paths.watched'.
+import 'phoenix_html';
 
 // Import local files
 //
 // Local files can be imported directly using relative
-// paths "./socket" or full ones "web/static/js/socket".
+// paths './socket' or full ones 'web/static/js/socket'.
 
-// import socket from "./socket"
-
-
-var calcBillButton = document.getElementById('calc-bill');
-calcBillButton.addEventListener('click', calcTotalWithTip, false);
+// import socket from './socket'
 
 
-function calcTotalWithTip() {
+// var billTotal = document.getElementById('bill-total').innerHTML;
 
-  var tipPercentage = parseInt(
-    document.getElementById('tip-percentage').value
-    , 10
-  );
-
-  var billAmount = parseFloat(
-    document.getElementById('bill-amount').value
-  );
-
-  var billTotal = document.getElementById('bill-total').innerHTML;
-
-  var tipAmount = tipPercentage/100 * billAmount;
-  var billTotal = tipAmount + billAmount;
-  document.getElementById('the-tip').innerHTML = round(tipAmount, 2);
-  document.getElementById('bill-total').innerHTML = billTotal.toFixed(2);
-}
-
+// Function that accurately rounds floats
 function round(value, decimals) {
   return Number(Math.round(value+'e'+decimals)+'e-'+decimals);
 }
+
+function parseString(theElId) {
+  return parseFloat(
+    document.getElementById(theElId).value
+  );
+}
+
+// Will calculate the tip amount and then round it. Pure function.
+function calcTip(tipPercentage, billAmount) {
+  const tipAmount = (tipPercentage / 100) * billAmount;
+  return round(tipAmount, 2);
+}
+
+// Calculates total bill w/ tip and rounds the value. Pure function.
+function calcTotal(tipAmount, billAmount) {
+  const billTotal = tipAmount + billAmount;
+  return round(billTotal, 2);
+}
+
+// Rounds numbers and updates the DOM.
+function updateDOM() {
+  // Gets the string values from the DOM and parses them to numbers.
+  const tipPercentage = parseString('tip-percentage');
+  const billAmount = parseString('bill-amount');
+
+  // Gets the result elements to get ready to update them.
+  const tipEl = document.getElementById('the-tip');
+  const totalEl = document.getElementById('bill-total');
+
+  const tipAmount = calcTip(tipPercentage, billAmount);
+
+  tipEl.innerHTML = tipAmount;
+  totalEl.innerHTML = calcTotal(tipAmount, billAmount);
+}
+
+// Gets the 'calculate bill' button and adds an event lister to it.
+document.getElementById('calc-bill').addEventListener('click', updateDOM, false);
