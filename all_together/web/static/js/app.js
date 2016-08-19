@@ -28,10 +28,10 @@ function round(value, decimals) {
   return Number(Math.round(value+'e'+decimals)+'e-'+decimals);
 }
 
-function parseString(theElId) {
-  return parseFloat(
-    document.getElementById(theElId).value
-  );
+// Takes an element. Gets the string value from it. Parses it.
+function parseElToFloat(theElId) {
+  const num = document.getElementById(theElId).value;
+  return parseFloat(num);
 }
 
 // Will calculate the tip amount and then round it. Pure function.
@@ -49,8 +49,8 @@ function calcTotal(tipAmount, billAmount) {
 // Rounds numbers and updates the DOM.
 function updateDOM() {
   // Gets the string values from the DOM and parses them to numbers.
-  const tipPercentage = parseString('tip-percentage');
-  const billAmount = parseString('bill-amount');
+  const tipPercentage = parseElToFloat('tip-percentage');
+  const billAmount = parseElToFloat('bill-amount');
 
   // Gets the result elements to get ready to update them.
   const tipEl = document.getElementById('the-tip');
