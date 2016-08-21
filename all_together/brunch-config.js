@@ -43,8 +43,7 @@ exports.config = {
     sass: {
       options: {
         includePaths: [
-          'node_modules/foundation-sites/scss',
-          'node_modules/motion-ui/src',
+          'node_modules/cutestrap/dist/scss',
         ]
       }
     }
@@ -57,10 +56,6 @@ exports.config = {
   },
 
   npm: {
-    enabled: true,
-    globals: {
-      $: 'jquery',
-      jQuery: 'jquery',
-    }
+    enabled: true
   }
 };
