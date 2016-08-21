@@ -20,9 +20,6 @@ import 'phoenix_html';
 
 // import socket from './socket'
 
-
-// var billTotal = document.getElementById('bill-total').innerHTML;
-
 // Function that accurately rounds floats
 function round(value, decimals) {
   return Number(Math.round(value+'e'+decimals)+'e-'+decimals);
