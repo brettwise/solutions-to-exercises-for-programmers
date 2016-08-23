@@ -25,12 +25,6 @@ function round(value, decimals) {
   return Number(Math.round(value+'e'+decimals)+'e-'+decimals);
 }
 
-// Takes an element. Gets the string value from it. Parses it.
-function parseElToFloat(theElId) {
-  const num = document.getElementById(theElId).value;
-  return parseFloat(num);
-}
-
 // Will calculate the tip amount and then round it. Pure function.
 function calcTip(tipPercentage, billAmount) {
   const tipAmount = (tipPercentage / 100) * billAmount;
@@ -43,21 +37,38 @@ function calcTotal(tipAmount, billAmount) {
   return round(billTotal, 2);
 }
 
+function validateInputVal(tipEl, tipErrorEl, billEl, billErrorEl) {
+  // Get value from element.
+  const tipVal = parseFloat(tipEl.value);
+  const billVal = parseFloat(billEl.value);
+  if (!isNaN(tipVal) && !isNaN(billVal)) {
+    const theHideErrorClass = 'textfield__error-message--hidden';
+    // Hides error messages if they were there.
+    tipErrorEl.className = theHideErrorClass;
+    billErrorEl.className = theHideErrorClass;
+    // Gets the result elements to get ready to update them.
+    const tipAmountEl = document.getElementById('the-tip');
+    const totalEl = document.getElementById('bill-total');
+    const tipAmount = calcTip(tipVal, billVal);
+    // Update result elements.
+    tipAmountEl.innerHTML = tipAmount;
+    totalEl.innerHTML = calcTotal(tipAmount, billVal);
+  } else {
+    const theShowErrorClass = 'textfield__error-message--show';
+    tipErrorEl.className = theShowErrorClass;
+    billErrorEl.className = theShowErrorClass;
+    return false;
+  }
+}
+
 // Rounds numbers and updates the DOM.
-function updateDOM() {
-  // Gets the string values from the DOM and parses them to numbers.
-  const tipPercentage = parseElToFloat('tip-percentage');
-  const billAmount = parseElToFloat('bill-amount');
-
-  // Gets the result elements to get ready to update them.
-  const tipEl = document.getElementById('the-tip');
-  const totalEl = document.getElementById('bill-total');
-
-  const tipAmount = calcTip(tipPercentage, billAmount);
-
-  tipEl.innerHTML = tipAmount;
-  totalEl.innerHTML = calcTotal(tipAmount, billAmount);
+function calcInputs() {
+  const tipEl = document.getElementById('tip-percentage');
+  const tipErrorEl = document.getElementById('tip-percentage-error');
+  const billEl = document.getElementById('bill-amount');
+  const billErrorEl = document.getElementById('bill-amount-error');
+  validateInputVal(tipEl, tipErrorEl, billEl, billErrorEl);
 }
 
 // Gets the 'calculate bill' button and adds an event lister to it.
-document.getElementById('calc-bill').addEventListener('click', updateDOM, false);
+document.getElementById('calc-bill').addEventListener('click', calcInputs, false);

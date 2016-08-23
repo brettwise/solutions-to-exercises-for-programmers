@@ -5,13 +5,15 @@
   <form>
 
     <label class="textfield">
-      <input id="bill-amount" type="text" placeholder="23.45"/>
+      <input id="bill-amount" type="number" min="0" placeholder="23.45" required/>
       <span class="textfield__label">The Bill Amount</span>
+      <span id="bill-amount-error" class="textfield__error-message--hidden">Numbers only, my wiley friend.</span>
     </label>
 
     <label class="textfield">
-      <input id="tip-percentage" type="text" placeholder="18"/>
+      <input id="tip-percentage" type="number" min="0" placeholder="18" required/>
       <span class="textfield__label">The Desired Tip Percentage</span>
+      <span id="tip-percentage-error" class="textfield__error-message--hidden">Numbers only, my wiley friend.</span>
     </label>
 
     <button id="calc-bill" type="button">Calculate</button>

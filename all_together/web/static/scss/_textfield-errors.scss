@@ -1,0 +1,14 @@
+.textfield {
+
+  &__error-message {
+
+    &--hidden {
+      display: none;
+    }
+
+    &--show {
+      color: $primary-dark;
+      display: inline;
+    }
+  }
+}
