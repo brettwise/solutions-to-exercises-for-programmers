@@ -17,7 +17,7 @@ defmodule AllTogether.Router do
     pipe_through :browser # Use the default browser stack
 
     get "/", PageController, :index
-    get "/calc-tip", CalcTipController, :index
+    get "/calc-tip", PageController, :calc_tip
     get "/saying-hello", PageController, :saying_hello
   end
 

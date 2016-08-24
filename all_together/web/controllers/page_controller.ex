@@ -5,6 +5,10 @@ defmodule AllTogether.PageController do
     render conn, "index.html"
   end
 
+  def calc_tip(conn, _params) do
+    render conn, "calc-tip.html"
+  end
+
   def saying_hello(conn, _params) do
     render conn, "saying-hello.html"
   end
