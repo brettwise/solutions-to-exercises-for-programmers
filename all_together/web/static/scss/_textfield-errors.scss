@@ -11,4 +11,18 @@
       display: inline;
     }
   }
+
+  @keyframes fadeIn {
+    0%, 100% {
+      opacity: 0.2;
+    }
+
+    50% {
+      opacity: 1;
+    }
+  }
+
+  &__label {
+    animation: fadeIn 1.4s infinite;
+  }
 }
