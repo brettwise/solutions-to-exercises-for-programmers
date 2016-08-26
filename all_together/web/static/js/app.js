@@ -80,11 +80,12 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
   // Saying Hello
   const nameInput = document.getElementById('name');
-  nameInput.addEventListener("keypress", checkName, false);
+  nameInput.addEventListener('keypress', checkName, false);
 
   function checkName(event) {
     if (event.keyCode === 13) {
-      document.getElementById('output').innerHTML = `Hi there, ${nameInput.value}. Happy you're using this input.`;
+      const output = document.getElementById('output');
+      output.innerHTML = `Hi there, ${nameInput.value}. Happy you're using this input.`;
       event.preventDefault();
     }
   }

@@ -11,18 +11,22 @@
       display: inline;
     }
   }
+}
 
-  @keyframes fadeIn {
-    0%, 100% {
-      opacity: 0.2;
-    }
-
-    50% {
-      opacity: 1;
-    }
+@keyframes fadeIn {
+  0%, 100% {
+    opacity: 0.2;
   }
 
-  &__label {
-    animation: fadeIn 1.4s infinite;
+  50% {
+    opacity: 1;
   }
+}
+
+.pulse {
+  animation: fadeIn 1.4s infinite;
+}
+
+#output::before {
+  content: ">> ";
 }
