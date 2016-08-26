@@ -13,6 +13,9 @@
       <li>
         <a href="/saying-hello">01 Saying Hello</a>
       </li>
+      <li>
+        <a href="/number-of-chars">02 Counting the Nmber of Characters</a>
+      </li>
     </ul>
   </div>
 

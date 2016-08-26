@@ -12,4 +12,8 @@ defmodule AllTogether.PageController do
   def saying_hello(conn, _params) do
     render conn, "saying-hello.html"
   end
+
+  def number_of_chars(conn, _params) do
+    render conn, "number-of-chars.html"
+  end
 end

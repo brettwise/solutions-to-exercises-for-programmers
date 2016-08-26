@@ -19,6 +19,7 @@ defmodule AllTogether.Router do
     get "/", PageController, :index
     get "/calc-tip", PageController, :calc_tip
     get "/saying-hello", PageController, :saying_hello
+    get "/number-of-chars", PageController, :number_of_chars
   end
 
   # Other scopes may use custom stacks.
