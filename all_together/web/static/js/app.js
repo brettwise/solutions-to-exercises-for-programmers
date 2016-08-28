@@ -79,27 +79,25 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
 
   // Checks for the enter key on the event passed in by the event listener then prints a string to the inner HTML of an element.
-  function checkName(event, outputId, strToPrint) {
-    if (event.keyCode === 13) {
-      const output = document.getElementById(outputId);
-      output.innerHTML = strToPrint;
-      event.preventDefault();
-    }
+  function updateDOM(event, outputId, strToPrint) {
+    const output = document.getElementById(outputId);
+    output.innerHTML = strToPrint;
+    event.preventDefault();
   }
 
   if (document.getElementById('name') != null) {
     const nameInput = document.getElementById('name');
-    nameInput.addEventListener('keypress', function(event) {
+    nameInput.addEventListener('keyup', function(event) {
       const str = `Hi there, ${nameInput.value}. Happy you're using this input.`;
-      checkName(event, 'output', str);
+      updateDOM(event, 'output', str);
     }, false);
   }
 
   if (document.getElementById('characters') != null) {
     const charInput = document.getElementById('characters');
-    charInput.addEventListener('keypress', function(event) {
+    charInput.addEventListener('keyup', function(event) {
       const str = `You typed ${charInput.value.length} characters.`;
-      checkName(event, 'the-count', str);
+      updateDOM(event, 'the-count', str);
     }, false);
   }
 

@@ -1,7 +1,7 @@
 <div class="wrapper-small">
   <form>
     <label class="textfield">
-      <span class="textfield__label pulse">Type something, then press enter. I will count.</span>
+      <span class="textfield__label pulse">Type something. I will count.</span>
       <input id="characters" autocomplete="off" required/>
     </label>
   </form>
