@@ -1,10 +1,8 @@
-<div class="wrapper-small">
-  <form>
-    <h1>Saying Hello</h1>
-    <label class="textfield">
-      <span class="textfield__label pulse">Enter first name. Then press enter.</span>
-      <input id="name" autocomplete="off" required/>
-    </label>
-  </form>
-  <p id="output"></p>
-</div>
+<form>
+  <h1>Saying Hello</h1>
+  <label class="textfield">
+    <span class="textfield__label pulse">Enter first name. Then press enter.</span>
+    <input id="name" autocomplete="off" required/>
+  </label>
+</form>
+<p id="output"></p>

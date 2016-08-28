@@ -1,25 +1,17 @@
-<div class="jumbotron">
-  <h2>Welcome to the solution list for "Excercises for Programmers!"</h2>
-</div>
+<h2>Welcome to the solution list for "Excercises for Programmers!"</h2>
 
-<div class="row marketing">
-
-  <div class="col-lg-6">
-    <h4>Solutions</h4>
-    <ul>
-      <li>
-        <a href="/calc-tip">00 Tip Calculator</a>
-      </li>
-      <li>
-        <a href="/saying-hello">01 Saying Hello</a>
-      </li>
-      <li>
-        <a href="/number-of-chars">02 Counting the Nmber of Characters</a>
-      </li>
-      <li>
-        <a href="/print-quotes">03 Printing Quotes</a>
-      </li>
-    </ul>
-  </div>
-
-</div>
+<h4>Solutions</h4>
+<ul>
+  <li>
+    <a href="/calc-tip">00 Tip Calculator</a>
+  </li>
+  <li>
+    <a href="/saying-hello">01 Saying Hello</a>
+  </li>
+  <li>
+    <a href="/number-of-chars">02 Counting the Nmber of Characters</a>
+  </li>
+  <li>
+    <a href="/print-quotes">03 Printing Quotes</a>
+  </li>
+</ul>

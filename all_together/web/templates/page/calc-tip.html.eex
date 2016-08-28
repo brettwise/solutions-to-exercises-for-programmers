@@ -1,30 +1,26 @@
-<section class="wrapper-small">
+<h1>Tip Calculator</h1>
 
-  <h1>Tip Calculator</h1>
+<form>
 
-  <form>
+  <label class="textfield">
+    <input id="bill-amount" type="number" min="0" placeholder="23.45" required/>
+    <span class="textfield__label">The Bill Amount</span>
+    <span id="bill-amount-error" class="textfield__error-message--hidden">Numbers only, my wiley friend.</span>
+  </label>
 
-    <label class="textfield">
-      <input id="bill-amount" type="number" min="0" placeholder="23.45" required/>
-      <span class="textfield__label">The Bill Amount</span>
-      <span id="bill-amount-error" class="textfield__error-message--hidden">Numbers only, my wiley friend.</span>
-    </label>
+  <label class="textfield">
+    <input id="tip-percentage" type="number" min="0" placeholder="18" required/>
+    <span class="textfield__label">The Desired Tip Percentage</span>
+    <span id="tip-percentage-error" class="textfield__error-message--hidden">Numbers only, my wiley friend.</span>
+  </label>
 
-    <label class="textfield">
-      <input id="tip-percentage" type="number" min="0" placeholder="18" required/>
-      <span class="textfield__label">The Desired Tip Percentage</span>
-      <span id="tip-percentage-error" class="textfield__error-message--hidden">Numbers only, my wiley friend.</span>
-    </label>
+  <button id="calc-bill" type="button">Calculate</button>
 
-    <button id="calc-bill" type="button">Calculate</button>
+  <br>
+  <br>
+  <span>Tip Amount</span>
+  <p id="the-tip">0.00</p>
+  <span>The Grand Total</span>
+  <p id="bill-total">0.00</p>
 
-    <br>
-    <br>
-    <span>Tip Amount</span>
-    <p id="the-tip">0.00</p>
-    <span>The Grand Total</span>
-    <p id="bill-total">0.00</p>
-
-  </form>
-
-</section>
+</form>
