@@ -1,0 +1,7 @@
+<form>
+  <label class="textfield">
+    <span class="textfield__label pulse">Type something. I will count.</span>
+    <input id="characters" autocomplete="off" required/>
+  </label>
+</form>
+<p id="the-count"></p>

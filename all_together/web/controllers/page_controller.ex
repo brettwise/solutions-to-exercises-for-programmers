@@ -16,4 +16,8 @@ defmodule AllTogether.PageController do
   def number_of_chars(conn, _params) do
     render conn, "number-of-chars.html"
   end
+
+  def print_quotes(conn, _params) do
+    render conn, "print-quotes.html"
+  end
 end
