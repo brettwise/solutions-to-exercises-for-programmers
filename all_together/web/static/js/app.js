@@ -96,7 +96,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
   if (document.getElementById('characters') != null) {
     const charInput = document.getElementById('characters');
     charInput.addEventListener('keyup', function(event) {
-      const str = `You typed ${charInput.value.length} characters.`;
+      const str = `You have typed "${charInput.value}" which is ${charInput.value.length} characters long including spaces.`;
       updateDOM(event, 'the-count', str);
     }, false);
   }
