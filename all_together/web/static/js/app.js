@@ -20,7 +20,8 @@ import 'phoenix_html';
 
 // import socket from './socket'
 
-document.addEventListener("DOMContentLoaded", function(event) {
+document.addEventListener('DOMContentLoaded', function(event) {
+
   // Function that accurately rounds floats
   function round(value, decimals) {
     return Number(Math.round(value+'e'+decimals)+'e-'+decimals);
@@ -71,14 +72,17 @@ document.addEventListener("DOMContentLoaded", function(event) {
     validateInputVal(tipEl, tipErrorEl, billEl, billErrorEl);
   }
 
-  // Gets the 'calculate bill' button and adds an event lister to it.
-  var calcBillButton = document.getElementById('calc-bill');
+  // Gets the 'calculate bill' button and adds
+  // an event lister to it.
+  const calcBillButton = document.getElementById('calc-bill');
   if(calcBillButton) {
     calcBillButton.addEventListener('click', calcInputs, false);
   }
 
 
-  // Checks for the enter key on the event passed in by the event listener then prints a string to the inner HTML of an element.
+  // Checks for the enter key on the event passed in by
+  // the event listener then prints a string to the inner
+  // HTML of an element.
   function updateDOM(event, outputId, strToPrint) {
     const output = document.getElementById(outputId);
     output.innerHTML = strToPrint;
@@ -96,7 +100,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
   if (document.getElementById('characters') != null) {
     const charInput = document.getElementById('characters');
     charInput.addEventListener('keyup', function(event) {
-      const str = `You have typed "${charInput.value}" which is ${charInput.value.length} characters long including spaces.`;
+      const str = `You have typed '${charInput.value}' which is ${charInput.value.length} characters long including spaces.`;
       updateDOM(event, 'the-count', str);
     }, false);
   }
